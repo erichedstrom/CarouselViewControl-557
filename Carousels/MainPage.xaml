@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+    xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+            x:Class="Carousels.MainPage">
+
+	<StackLayout Padding="0" Spacing="0">
+		<AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+           BackgroundColor="White" 
+            >
+			<ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" 
+				AbsoluteLayout.LayoutBounds="0,0,1,1">
+				<StackLayout Padding="0" Spacing="0" Margin="0" HorizontalOptions="FillAndExpand" 
+                    BackgroundColor="White">
+                    
+					<!-- Image Carousel -->
+					<StackLayout Orientation="Vertical" BackgroundColor="Black" HorizontalOptions="FillAndExpand" >
+                        <controls:CarouselViewControl HeightRequest="200" Orientation="Horizontal" InterPageSpacing="0" Position="{Binding CarouselPageIndex}" ItemsSource="{Binding CarouselImages}"  HorizontalOptions="FillAndExpand">
+                            <controls:CarouselViewControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Image Aspect="AspectFill" HorizontalOptions="FillAndExpand" HeightRequest="200" Source="{Binding Url}" />
+								</DataTemplate>
+                            </controls:CarouselViewControl.ItemTemplate>
+                        </controls:CarouselViewControl>
+					</StackLayout>
+
+                    
+				</StackLayout>
+			</ScrollView>
+		</AbsoluteLayout>
+        
+	</StackLayout>
+</ContentPage>
