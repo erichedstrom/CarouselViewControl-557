@@ -3,17 +3,9 @@
     xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
             x:Class="Carousels.MainPage">
 
-	<StackLayout Padding="0" Spacing="0">
-		<AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
-           BackgroundColor="White" 
-            >
-			<ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" 
-				AbsoluteLayout.LayoutBounds="0,0,1,1">
-				<StackLayout Padding="0" Spacing="0" Margin="0" HorizontalOptions="FillAndExpand" 
-                    BackgroundColor="White">
-                    
-					<!-- Image Carousel -->
-					<StackLayout Orientation="Vertical" BackgroundColor="Black" HorizontalOptions="FillAndExpand" >
+    <!-- remove the ScrollView around the Carousel and it won't crash -->
+
+			<ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
                         <controls:CarouselViewControl HeightRequest="200" Orientation="Horizontal" InterPageSpacing="0" Position="{Binding CarouselPageIndex}" ItemsSource="{Binding CarouselImages}"  HorizontalOptions="FillAndExpand">
                             <controls:CarouselViewControl.ItemTemplate>
                                 <DataTemplate>
@@ -21,12 +13,6 @@
 								</DataTemplate>
                             </controls:CarouselViewControl.ItemTemplate>
                         </controls:CarouselViewControl>
-					</StackLayout>
+            </ScrollView>
 
-                    
-				</StackLayout>
-			</ScrollView>
-		</AbsoluteLayout>
-        
-	</StackLayout>
 </ContentPage>

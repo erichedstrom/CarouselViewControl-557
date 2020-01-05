@@ -22,6 +22,13 @@ namespace Carousels
                 Url = "https://docs.microsoft.com/en-us/xamarin/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm-images/oneshotdatetime-large.png"
             };
             CarouselImages.Add(image);
+            var image2 = new BusinessProfilePhoto
+            {
+                Caption = "howdy",
+                Ord = 1,
+                Url = "https://docs.microsoft.com/en-us/xamarin/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm-images/hslcolorscroll-large.png"
+            };
+            CarouselImages.Add(image2);
         }
 
         List<BusinessProfilePhoto> carouselImages;
